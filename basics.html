@@ -1,0 +1,61 @@
+<html>
+  <body>
+    <script>
+
+      /*
+      * Problem 1 - Create a parent class
+      * 1. Create a 0-arg constructor
+      *   a. In the constructor add a property `count` w/ value set to 0 and `step` w/ value set to 1
+      * 2. Add a prototype method `increment` that adds the value `step` to `count`
+      *   a. Return a proper context from the methods so you can chain
+      * 3. Add a prototype method `decrement` that subtracts the value `step` from `count`
+      *   a. Return a proper context from the methods so you can chain
+      * 4. Add a 1-arg prototype setter that can change the `step`
+      *   a. Return a proper context from the methods so you can chain
+      */
+
+      class Counter {
+        // Add code
+      };
+
+      /*
+      * Problem 2 - Using the class proto methods
+      * Explain and rewrite the function to make it work properly
+      */
+
+      const incrementer = function(){
+        setInterval(function() => {
+          this.increment();
+        }, 1000);
+      }.call(new Counter());
+
+      /*
+        Explanation:
+        Code Fix:
+      */
+
+      /*
+      * Problem 2 - Extending the parent class
+      * 1. Find the error in the subclass constructor `step`
+      * 2. Add an `increment` method that leverages the parent method
+      *   a. Return a proper context from the methods so you can chain
+      * 3. Add a `decrement` method that leverages the parent method
+      *   a. Return a proper context from the methods so you can chain
+      * 4. Instantiate an instance of the new subclass w/ step `5`
+      *   a. Call appropriate methods so the console.log prints true
+      */
+
+      class NStepCounter extends Counter {
+        constructor(step){
+          this.step = step;
+        }
+        // Add code
+      };
+
+      // Instantiate a new `NStepCounter` with step set to `5` and perform operations on the instance
+      const problemTwoCounter = undefined;
+      console.log(problemTwoCounter.count === 10);
+
+    </script>
+  </body>
+</html>
